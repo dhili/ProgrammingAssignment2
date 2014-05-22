@@ -25,14 +25,14 @@ makeCacheMatrix <- function(matrixdata = matrix()) {
 		
 		# since matrix data is changing, 
 		# nullifying inverse matrix value
-        inverseMatrix <<- NULL
+		inverseMatrix <<- NULL
 	}
 	
 	# this function gets the value of the matrix
-    get <- function() matrixdata
+	get <- function() matrixdata
 	
 	# this function sets inverse of a matrix that exist in "parent" context
-    setinvmatrix <- function(m) inverseMatrix <<- m
+	setinvmatrix <- function(m) inverseMatrix <<- m
     
 	# this function gets inverse of a matrix
 	getinvmatrix <- function() inverseMatrix
@@ -41,8 +41,8 @@ makeCacheMatrix <- function(matrixdata = matrix()) {
 	# set & get value of the matrix
 	# set and get value of the inverse matrix
 	list(set = set, get = get,
-        setinvmatrix = setinvmatrix,
-        getinvmatrix = getinvmatrix)
+		setinvmatrix = setinvmatrix,
+		getinvmatrix = getinvmatrix)
 }
 	
 ## cacheSolve Function
@@ -59,17 +59,17 @@ cacheSolve <- function(cache, ...) {
 	if(!is.null(m)) {
 		# since cache value is not null, hence returning cached value
 		return(m)
-    }
+	}
 	
 	# getting matrix data from cache object
-    data <- cache$get()
+	data <- cache$get()
 	
 	# computing matrix inverse
-    m <- solve(data)
+	m <- solve(data)
 	
 	# Setting computed inverse matrix value to the cache
-    cache$setinvmatrix(m)
+	cache$setinvmatrix(m)
 	
 	# Returning inverse matrix value
-    m
+	m
 }
