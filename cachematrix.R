@@ -19,14 +19,14 @@ makeCacheMatrix <- function(matrixdata = matrix()) {
 	inverseMatrix <- NULL
 	
 	# this function sets the value of the matrix
-    set <- function(i) {
+	set <- function(i) {
 		# setting matrix data that exist in "parent" context
 		matrixdata <<- i
 		
 		# since matrix data is changing, 
 		# nullifying inverse matrix value
         inverseMatrix <<- NULL
-    }
+	}
 	
 	# this function gets the value of the matrix
     get <- function() matrixdata
